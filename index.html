@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculadora Científica</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app" role="application" aria-label="Calculadora Científica">
+    <div class="calc">
+      <div class="topbar">
+        <div class="mode">
+          <button id="degRadBtn" class="chip" aria-pressed="true">DEG</button>
+          <button id="secondBtn" class="chip">2nd</button>
+        </div>
+        <div class="memory">
+          <button class="chip" data-mem="mc">MC</button>
+          <button class="chip" data-mem="mr">MR</button>
+          <button class="chip" data-mem="mplus">M+</button>
+          <button class="chip" data-mem="mminus">M-</button>
+        </div>
+      </div>
+
+      <div class="display" role="textbox" aria-live="polite" aria-atomic="true">
+        <div id="history" class="history" aria-hidden="true"></div>
+        <div id="output" class="output" tabindex="0">0</div>
+      </div>
+
+      <div class="keys" role="group" aria-label="Teclas da calculadora">
+        <button data-action="clear" class="key key-ac" aria-label="Limpar">AC</button>
+        <button data-action="backspace" class="key" aria-label="Apagar">⌫</button>
+        <button data-action="percent" class="key">%</button>
+        <button data-op="divide" class="key key-op">÷</button>
+
+        <button data-fn="sin" class="key">sin</button>
+        <button data-fn="cos" class="key">cos</button>
+        <button data-fn="tan" class="key">tan</button>
+        <button data-const="pi" class="key">π</button>
+
+        <button data-fn="ln" class="key">ln</button>
+        <button data-fn="log10" class="key">log</button>
+        <button data-fn="sqrt" class="key">√</button>
+        <button data-const="e" class="key">e</button>
+
+        <button data-op="pow" class="key">xʸ</button>
+        <button data-fn="square" class="key">x²</button>
+        <button data-fn="inv" class="key">1/x</button>
+        <button data-fn="fact" class="key">n!</button>
+
+        <button data-insert="(" class="key">(</button>
+        <button data-insert=")" class="key">)</button>
+        <button data-action="sign" class="key">±</button>
+        <button data-op="multiply" class="key key-op">×</button>
+
+        <button data-num="7" class="key">7</button>
+        <button data-num="8" class="key">8</button>
+        <button data-num="9" class="key">9</button>
+        <button data-op="subtract" class="key key-op">−</button>
+
+        <button data-num="4" class="key">4</button>
+        <button data-num="5" class="key">5</button>
+        <button data-num="6" class="key">6</button>
+        <button data-op="add" class="key key-op">+</button>
+
+        <button data-num="1" class="key">1</button>
+        <button data-num="2" class="key">2</button>
+        <button data-num="3" class="key">3</button>
+        <button data-action="equals" class="key key-eq">=</button>
+
+        <button data-num="0" class="key key-zero">0</button>
+        <button data-action="decimal" class="key">.</button>
+        <button data-action="ans" class="key">ANS</button>
+        <button data-action="clear-entry" class="key">CE</button>
+      </div>
+    </div>
+    <footer class="tips">
+      <p>Atalhos: números, + - * / ( ) ^, Enter (=), Backspace (⌫), Esc (AC). Use . para decimal.</p>
+    </footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

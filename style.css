@@ -1,0 +1,111 @@
+/* Reset básico */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji';
+  background: radial-gradient(1200px 600px at 70% -10%, #23262d, #0f1115);
+  color: #e9ecf1;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+}
+
+.app { width: min(520px, 96vw); }
+
+.calc {
+  backdrop-filter: blur(8px);
+  background: rgba(18, 21, 27, 0.75);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 24px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.45);
+  overflow: hidden;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 12px 0;
+  gap: 8px;
+}
+
+.chip {
+  background: #2a2f3a;
+  color: #e9ecf1;
+  border: 0;
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 12px;
+  cursor: pointer;
+}
+.chip[aria-pressed="true"] { background: #4b7bec; }
+
+.display {
+  padding: 12px 16px;
+  min-height: 96px;
+  display: grid;
+  gap: 6px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0));
+}
+
+.history {
+  height: 20px;
+  font-size: 13px;
+  color: #aab2be;
+  text-align: right;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.output {
+  font-variant-numeric: tabular-nums;
+  font-size: clamp(32px, 7vw, 48px);
+  line-height: 1.2;
+  text-align: right;
+  outline: none;
+  max-width: 100%;
+  word-break: break-all;
+}
+
+.keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding: 12px;
+}
+
+.key {
+  appearance: none;
+  border: 0;
+  border-radius: 16px;
+  padding: 14px;
+  font-size: 16px;
+  color: #e9ecf1;
+  background: #22262f;
+  box-shadow: inset 0 -2px 0 rgba(255,255,255,0.04);
+  cursor: pointer;
+  transition: transform 0.04s ease, filter 0.08s ease, background 0.2s ease;
+  user-select: none;
+}
+
+.key:hover { filter: brightness(1.08); }
+.key:active { transform: translateY(1px) scale(0.995); }
+
+.key-op { background: #2a2f3a; }
+.key-eq { background: #4b7bec; }
+.key-ac { background: #e15b64; }
+.key-zero { grid-column: span 2; }
+
+.tips {
+  margin-top: 10px;
+  opacity: 0.8;
+  text-align: center;
+  font-size: 12px;
+}
+
+/* Acessibilidade foco */
+.key:focus-visible, .chip:focus-visible {
+  outline: 2px solid #86b7ff;
+  outline-offset: 2px;
+}
